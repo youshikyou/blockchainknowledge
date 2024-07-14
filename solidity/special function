@@ -3,5 +3,6 @@ There are three special functions
 2. receive() external payable
 3. fallback() external
 
+The receive function runs to send ether without calldata.
 The receive and fallback don't accept any arguments or return any values but both of them need to be external functions.
 The receive function needs to specify the payable keyword, but fallback function doesn't need to.
