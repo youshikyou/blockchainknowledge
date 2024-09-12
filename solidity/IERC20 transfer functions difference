@@ -1,0 +1,12 @@
+There are two transfer functions in ERC20.
+function transfer(address recipient, uint256 amount) external returns (bool);
+function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+
+The transferFrom function is used when one address (usually a spender) wants to transfer tokens on behalf of another address (the token owner). 
+In order to use transferFrom, the token owner must have approved the spender to transfer up to a certain amount of tokens.
+Example of transferFrom Usage
+Let’s say Alice owns 100 tokens, and she wants to allow Bob to spend 50 of those tokens on her behalf. The flow would look like this:
+Alice calls approve(Bob, 50) on the token contract, allowing Bob to spend 50 of her tokens.
+Bob calls transferFrom(Alice, Charlie, 50), transferring 50 tokens from Alice's account to Charlie’s account.
+
+If it is the owner of the tokens to spend the tokens, it is enough to use transfer function to transfer token to 
